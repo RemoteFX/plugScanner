@@ -29,13 +29,13 @@ export default function ScanPage({ onImageCapture, onBack }: ScanPageProps) {
         <div className="flex items-center gap-4 mb-6">
           <button
             onClick={onBack}
-            className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+            className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
           >
-            <ArrowLeft size={20} />
+            <ArrowLeft size={20} strokeWidth={2} />
           </button>
-          <div>
-            <h2 className="text-white">Upload Spark Plug Photo</h2>
-            <p className="text-slate-400 text-sm">Take or choose a photo to analyze</p>
+          <div className="min-w-0 flex-1">
+            <h2 className="text-white truncate">Upload Spark Plug Photo</h2>
+            <p className="text-slate-400 text-sm truncate">Take or choose a photo to analyze</p>
           </div>
         </div>
 
@@ -75,7 +75,7 @@ export default function ScanPage({ onImageCapture, onBack }: ScanPageProps) {
                 onClick={handleUploadClick}
                 className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white h-14 rounded-xl"
               >
-                <Camera size={20} className="mr-2" />
+                <Camera size={20} className="mr-2" strokeWidth={2} />
                 Take Photo
               </Button>
               <Button
@@ -83,7 +83,7 @@ export default function ScanPage({ onImageCapture, onBack }: ScanPageProps) {
                 variant="outline"
                 className="flex-1 border-slate-600 bg-slate-700 hover:bg-slate-600 text-slate-100 h-14 rounded-xl"
               >
-                <Upload size={20} className="mr-2" />
+                <Upload size={20} className="mr-2" strokeWidth={2} />
                 Upload from Device
               </Button>
             </div>
@@ -104,20 +104,20 @@ export default function ScanPage({ onImageCapture, onBack }: ScanPageProps) {
           <h4 className="text-slate-200 mb-3">Quick Tips</h4>
           <ul className="space-y-2">
             <li className="flex items-start gap-3 text-slate-300 text-sm">
-              <span className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-blue-400 text-xs">1</span>
+              <span className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                <span className="text-blue-400 text-xs font-medium">1</span>
               </span>
               <span>Make sure the spark plug is clean and visible</span>
             </li>
             <li className="flex items-start gap-3 text-slate-300 text-sm">
-              <span className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-blue-400 text-xs">2</span>
+              <span className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                <span className="text-blue-400 text-xs font-medium">2</span>
               </span>
               <span>Use good lighting — natural light works best</span>
             </li>
             <li className="flex items-start gap-3 text-slate-300 text-sm">
-              <span className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-blue-400 text-xs">3</span>
+              <span className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                <span className="text-blue-400 text-xs font-medium">3</span>
               </span>
               <span>Focus on the electrode and insulator area</span>
             </li>
