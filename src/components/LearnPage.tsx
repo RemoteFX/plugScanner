@@ -23,7 +23,7 @@ export default function LearnPage() {
         'Good engine condition',
         'Regular maintenance schedule',
       ],
-      icon: <CheckCircle size={32} className="text-green-500" />,
+      icon: <CheckCircle size={32} className="text-green-500" strokeWidth={2} />,
     },
     {
       condition: 'Basah',
@@ -35,7 +35,7 @@ export default function LearnPage() {
         'Excessive fuel delivery',
         'Failed ignition system components',
       ],
-      icon: <Droplets size={32} className="text-blue-500" />,
+      icon: <Droplets size={32} className="text-blue-500" strokeWidth={2} />,
     },
     {
       condition: 'Boros',
@@ -47,7 +47,7 @@ export default function LearnPage() {
         'Leaking fuel injectors',
         'Excessive idling or short trips',
       ],
-      icon: <Flame size={32} className="text-amber-500" />,
+      icon: <Flame size={32} className="text-amber-500" strokeWidth={2} />,
     },
     {
       condition: 'Kering',
@@ -59,7 +59,7 @@ export default function LearnPage() {
         'Incorrect spark plug heat range',
         'Engine overheating issues',
       ],
-      icon: <AlertTriangle size={32} className="text-red-500" />,
+      icon: <AlertTriangle size={32} className="text-red-500" strokeWidth={2} />,
     },
   ];
 
@@ -93,7 +93,7 @@ export default function LearnPage() {
                 >
                   <div className="flex items-center gap-4">
                     <div
-                      className="w-14 h-14 rounded-full flex items-center justify-center"
+                      className="w-14 h-14 rounded-full flex items-center justify-center shrink-0"
                       style={{
                         backgroundColor: `${conditionColor}20`,
                         border: `2px solid ${conditionColor}`,
@@ -133,7 +133,7 @@ export default function LearnPage() {
                       {item.causes.map((cause, i) => (
                         <li key={i} className="flex items-start gap-3 text-slate-300">
                           <span
-                            className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0"
+                            className="w-2 h-2 rounded-full mt-1.5 shrink-0"
                             style={{ backgroundColor: conditionColor }}
                           />
                           <span>{cause}</span>
@@ -152,19 +152,19 @@ export default function LearnPage() {
           <h3 className="text-white mb-4">💡 General Maintenance Tips</h3>
           <ul className="space-y-3 text-slate-300">
             <li className="flex items-start gap-3">
-              <span className="text-blue-400">•</span>
+              <span className="text-blue-400 shrink-0">•</span>
               <span>Check spark plugs every 30,000 miles or as recommended by manufacturer</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-blue-400">•</span>
+              <span className="text-blue-400 shrink-0">•</span>
               <span>Use the correct spark plug type and gap for your engine</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-blue-400">•</span>
+              <span className="text-blue-400 shrink-0">•</span>
               <span>Replace plugs in sets to ensure even performance</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-blue-400">•</span>
+              <span className="text-blue-400 shrink-0">•</span>
               <span>Inspect plugs when experiencing engine performance issues</span>
             </li>
           </ul>

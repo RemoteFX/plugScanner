@@ -33,10 +33,10 @@ export default function SettingsPage() {
         <Card className="bg-slate-800 border-slate-700 rounded-2xl p-6 mb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${
                 isOnline ? 'bg-green-500/20' : 'bg-red-500/20'
               }`}>
-                <Wifi size={24} className={isOnline ? 'text-green-500' : 'text-red-500'} />
+                <Wifi size={24} className={isOnline ? 'text-green-500' : 'text-red-500'} strokeWidth={2} />
               </div>
               <div>
                 <h3 className="text-white mb-1">Raspberry Pi</h3>
@@ -67,6 +67,7 @@ export default function SettingsPage() {
               <ChevronDown
                 size={20}
                 className={`text-slate-400 transition-transform ${advancedOpen ? 'rotate-180' : ''}`}
+                strokeWidth={2}
               />
             </CollapsibleTrigger>
             
@@ -93,8 +94,8 @@ export default function SettingsPage() {
         {/* About */}
         <Card className="bg-slate-800 border-slate-700 rounded-2xl p-6">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-              <Info size={24} className="text-white" />
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shrink-0">
+              <Info size={24} className="text-white" strokeWidth={2} />
             </div>
             <div>
               <h3 className="text-white">About PlugScan</h3>

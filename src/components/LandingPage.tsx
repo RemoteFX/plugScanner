@@ -24,8 +24,8 @@ export default function LandingPage({ onTakePhoto, onLogin, user }: LandingPageP
         {/* Header */}
         <div className="flex items-center justify-between mb-12">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-              <Zap size={24} className="text-white" />
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shrink-0">
+              <Zap size={24} className="text-white" strokeWidth={2} />
             </div>
             <div>
               <h3 className="text-white">PlugScan</h3>
@@ -34,10 +34,10 @@ export default function LandingPage({ onTakePhoto, onLogin, user }: LandingPageP
           
           {user ? (
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white text-sm">{user.name[0].toUpperCase()}</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shrink-0">
+                <span className="text-white text-sm font-medium">{user.name[0].toUpperCase()}</span>
               </div>
-              <span className="text-slate-300 hidden sm:inline">Hi, {user.name.split(' ')[0]}!</span>
+              <span className="text-slate-300 hidden sm:inline truncate">{user.name.split(' ')[0]}</span>
             </div>
           ) : (
             <Button
@@ -74,7 +74,7 @@ export default function LandingPage({ onTakePhoto, onLogin, user }: LandingPageP
               onClick={onTakePhoto}
               className="text-slate-400 hover:text-slate-300 text-sm flex items-center gap-2 transition-colors"
             >
-              <Upload size={16} />
+              <Upload size={16} strokeWidth={2} />
               or upload a photo
             </button>
           </div>
@@ -82,11 +82,12 @@ export default function LandingPage({ onTakePhoto, onLogin, user }: LandingPageP
           {/* Tips Section */}
           <Collapsible open={tipsOpen} onOpenChange={setTipsOpen}>
             <CollapsibleTrigger className="flex items-center gap-2 mx-auto text-slate-400 hover:text-slate-300 transition-colors">
-              <Lightbulb size={18} />
+              <Lightbulb size={18} strokeWidth={2} />
               <span className="text-sm">Tips for a good detection</span>
               <ChevronDown
                 size={18}
                 className={`transition-transform ${tipsOpen ? 'rotate-180' : ''}`}
+                strokeWidth={2}
               />
             </CollapsibleTrigger>
             
@@ -94,8 +95,8 @@ export default function LandingPage({ onTakePhoto, onLogin, user }: LandingPageP
               <div className="mt-6 bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
                 <div className="grid sm:grid-cols-3 gap-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                      <Lightbulb size={20} className="text-blue-400" />
+                    <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+                      <Lightbulb size={20} className="text-blue-400" strokeWidth={2} />
                     </div>
                     <div className="text-left">
                       <h4 className="text-slate-200 text-sm mb-1">Good Lighting</h4>
@@ -106,8 +107,8 @@ export default function LandingPage({ onTakePhoto, onLogin, user }: LandingPageP
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                      <Target size={20} className="text-blue-400" />
+                    <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+                      <Target size={20} className="text-blue-400" strokeWidth={2} />
                     </div>
                     <div className="text-left">
                       <h4 className="text-slate-200 text-sm mb-1">Focus on Electrode</h4>
@@ -118,8 +119,8 @@ export default function LandingPage({ onTakePhoto, onLogin, user }: LandingPageP
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                      <Camera size={20} className="text-blue-400" />
+                    <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+                      <Camera size={20} className="text-blue-400" strokeWidth={2} />
                     </div>
                     <div className="text-left">
                       <h4 className="text-slate-200 text-sm mb-1">Clean Background</h4>
@@ -137,8 +138,8 @@ export default function LandingPage({ onTakePhoto, onLogin, user }: LandingPageP
         {/* Feature Cards */}
         <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 text-center">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Zap size={24} className="text-white" />
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 shrink-0">
+              <Zap size={24} className="text-white" strokeWidth={2} />
             </div>
             <h4 className="text-slate-200 mb-1">Instant Results</h4>
             <p className="text-slate-400 text-sm">
@@ -147,8 +148,8 @@ export default function LandingPage({ onTakePhoto, onLogin, user }: LandingPageP
           </div>
           
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 text-center">
-            <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Target size={24} className="text-white" />
+            <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3 shrink-0">
+              <Target size={24} className="text-white" strokeWidth={2} />
             </div>
             <h4 className="text-slate-200 mb-1">Accurate Analysis</h4>
             <p className="text-slate-400 text-sm">
@@ -157,8 +158,8 @@ export default function LandingPage({ onTakePhoto, onLogin, user }: LandingPageP
           </div>
           
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 text-center">
-            <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Lightbulb size={24} className="text-white" />
+            <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 shrink-0">
+              <Lightbulb size={24} className="text-white" strokeWidth={2} />
             </div>
             <h4 className="text-slate-200 mb-1">Helpful Tips</h4>
             <p className="text-slate-400 text-sm">

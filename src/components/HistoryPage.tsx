@@ -63,8 +63,8 @@ export default function HistoryPage({ user, onLogin }: HistoryPageProps) {
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="flex items-center justify-center min-h-[60vh]">
             <Card className="bg-slate-800 border-slate-700 rounded-2xl p-12 max-w-md text-center">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                <LogIn size={40} className="text-white" />
+              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shrink-0">
+                <LogIn size={40} className="text-white" strokeWidth={2} />
               </div>
               <h2 className="text-white mb-3">Sign In Required</h2>
               <p className="text-slate-300 mb-6">
@@ -74,7 +74,7 @@ export default function HistoryPage({ user, onLogin }: HistoryPageProps) {
                 onClick={onLogin}
                 className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white h-12 rounded-xl"
               >
-                <LogIn size={20} className="mr-2" />
+                <LogIn size={20} className="mr-2" strokeWidth={2} />
                 Sign In / Sign Up
               </Button>
             </Card>
@@ -101,7 +101,7 @@ export default function HistoryPage({ user, onLogin }: HistoryPageProps) {
                   size="sm"
                   className="border-red-500/50 text-red-400 hover:bg-red-500/10"
                 >
-                  <Trash2 size={16} className="mr-2" />
+                  <Trash2 size={16} className="mr-2" strokeWidth={2} />
                   Clear All
                 </Button>
               </AlertDialogTrigger>
@@ -161,10 +161,10 @@ export default function HistoryPage({ user, onLogin }: HistoryPageProps) {
 
                     {/* Info */}
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between mb-2">
-                        <div>
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <div className="min-w-0 flex-1">
                           <h4
-                            className="mb-1"
+                            className="mb-1 truncate"
                             style={{ color: conditionColor }}
                           >
                             {result.condition}
@@ -174,7 +174,7 @@ export default function HistoryPage({ user, onLogin }: HistoryPageProps) {
                           </p>
                         </div>
                         <span
-                          className="px-2 py-1 rounded text-xs"
+                          className="px-2 py-1 rounded text-xs whitespace-nowrap shrink-0"
                           style={{
                             backgroundColor: `${conditionColor}20`,
                             color: conditionColor,
@@ -194,9 +194,9 @@ export default function HistoryPage({ user, onLogin }: HistoryPageProps) {
                         e.stopPropagation();
                         handleDelete(result.id);
                       }}
-                      className="text-slate-500 hover:text-red-400 transition-colors p-2"
+                      className="text-slate-500 hover:text-red-400 transition-colors p-2 shrink-0"
                     >
-                      <Trash2 size={18} />
+                      <Trash2 size={18} strokeWidth={2} />
                     </button>
                   </div>
                 </Card>

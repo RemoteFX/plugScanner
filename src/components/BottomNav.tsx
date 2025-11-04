@@ -31,7 +31,7 @@ export default function BottomNav({ currentPage, onNavigate }: BottomNavProps) {
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
-                <Icon size={22} strokeWidth={isActive ? 2.5 : 2} />
+                <Icon size={22} strokeWidth={isActive ? 2.5 : 2} className="shrink-0" />
                 <span className="text-xs">{item.label}</span>
               </button>
             );

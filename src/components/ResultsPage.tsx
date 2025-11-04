@@ -17,13 +17,13 @@ export default function ResultsPage({ result, onRescan, onSave, user }: ResultsP
   const getIcon = () => {
     switch (result.condition) {
       case 'Ideal':
-        return <CheckCircle size={56} className="text-green-500" />;
+        return <CheckCircle size={56} className="text-green-500" strokeWidth={2} />;
       case 'Basah':
-        return <Droplets size={56} className="text-blue-500" />;
+        return <Droplets size={56} className="text-blue-500" strokeWidth={2} />;
       case 'Boros':
-        return <AlertCircle size={56} className="text-amber-500" />;
+        return <AlertCircle size={56} className="text-amber-500" strokeWidth={2} />;
       case 'Kering':
-        return <XCircle size={56} className="text-red-500" />;
+        return <XCircle size={56} className="text-red-500" strokeWidth={2} />;
     }
   };
 
@@ -118,8 +118,8 @@ export default function ResultsPage({ result, onRescan, onSave, user }: ResultsP
         {/* Feedback Card */}
         <Card className="bg-gradient-to-br from-slate-800 to-slate-800/80 border-slate-700 rounded-2xl p-6 mb-6">
           <div className="flex items-start gap-4 mb-4">
-            <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-              <Wrench size={24} className="text-blue-400" />
+            <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+              <Wrench size={24} className="text-blue-400" strokeWidth={2} />
             </div>
             <div>
               <h3 className="text-white mb-2">What This Means</h3>
