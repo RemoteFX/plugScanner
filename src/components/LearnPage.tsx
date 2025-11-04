@@ -23,7 +23,7 @@ export default function LearnPage() {
         'Good engine condition',
         'Regular maintenance schedule',
       ],
-      icon: <CheckCircle size={32} className="text-green-500" />,
+      icon: <CheckCircle size={32} className="text-green-600 dark:text-green-500" />,
     },
     {
       condition: 'Basah',
@@ -35,7 +35,7 @@ export default function LearnPage() {
         'Excessive fuel delivery',
         'Failed ignition system components',
       ],
-      icon: <Droplets size={32} className="text-blue-500" />,
+      icon: <Droplets size={32} className="text-blue-600 dark:text-blue-500" />,
     },
     {
       condition: 'Boros',
@@ -47,7 +47,7 @@ export default function LearnPage() {
         'Leaking fuel injectors',
         'Excessive idling or short trips',
       ],
-      icon: <Flame size={32} className="text-amber-500" />,
+      icon: <Flame size={32} className="text-amber-600 dark:text-amber-500" />,
     },
     {
       condition: 'Kering',
