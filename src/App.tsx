@@ -9,6 +9,8 @@ import LearnPage from './components/LearnPage';
 import SettingsPage from './components/SettingsPage';
 import AuthModal from './components/AuthModal';
 import BottomNav from './components/BottomNav';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
 import LoadingScreen from './components/LoadingScreen';
 import { analyzeSparkPlug, DetectionResult } from './utils/mockApi';
 import { saveResult } from './utils/storage';
@@ -87,7 +89,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Loading Screen */}
       {isAnalyzing && <LoadingScreen />}
 
@@ -98,41 +100,54 @@ export default function App() {
         onLogin={handleLogin}
       />
 
-      {/* Page Content */}
-      {currentPage === 'home' && (
-        <LandingPage
-          onTakePhoto={handleTakePhoto}
-          onLogin={handleOpenAuth}
-          user={user}
-        />
-      )}
+      {/* Desktop Sidebar */}
+      <Sidebar currentPage={currentPage} onNavigate={handleNavigate} />
 
-      {currentPage === 'scan' && (
-        <ScanPage
-          onImageCapture={handleImageCapture}
-          onBack={() => setCurrentPage('home')}
-        />
-      )}
-      
-      {currentPage === 'results' && currentResult && (
-        <ResultsPage
-          result={currentResult}
-          onRescan={handleRescan}
-          onSave={handleSaveResult}
-          user={user}
-        />
-      )}
-      
-      {currentPage === 'history' && (
-        <HistoryPage user={user} onLogin={handleOpenAuth} />
-      )}
-      
-      {currentPage === 'learn' && <LearnPage />}
-      
-      {currentPage === 'settings' && <SettingsPage />}
+      {/* Main Content Area */}
+      <div className="lg:pl-64">
+        {/* Header */}
+        <Header user={user} onLogin={handleOpenAuth} />
 
-      {/* Bottom Navigation */}
-      <BottomNav currentPage={currentPage} onNavigate={handleNavigate} />
+        {/* Page Content */}
+        <main className="min-h-[calc(100vh-4rem)]">
+          {currentPage === 'home' && (
+            <LandingPage
+              onTakePhoto={handleTakePhoto}
+              onLogin={handleOpenAuth}
+              user={user}
+            />
+          )}
+
+          {currentPage === 'scan' && (
+            <ScanPage
+              onImageCapture={handleImageCapture}
+              onBack={() => setCurrentPage('home')}
+            />
+          )}
+          
+          {currentPage === 'results' && currentResult && (
+            <ResultsPage
+              result={currentResult}
+              onRescan={handleRescan}
+              onSave={handleSaveResult}
+              user={user}
+            />
+          )}
+          
+          {currentPage === 'history' && (
+            <HistoryPage user={user} onLogin={handleOpenAuth} />
+          )}
+          
+          {currentPage === 'learn' && <LearnPage />}
+          
+          {currentPage === 'settings' && <SettingsPage />}
+        </main>
+
+        {/* Mobile Bottom Navigation */}
+        <div className="lg:hidden">
+          <BottomNav currentPage={currentPage} onNavigate={handleNavigate} />
+        </div>
+      </div>
 
       {/* Toast Notifications */}
       <Toaster
